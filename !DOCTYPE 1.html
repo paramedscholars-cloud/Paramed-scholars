@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramed Scholars | Life Sciences & Competitive Exam Prep</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family for professional look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind Configuration */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1e3a8a', /* Deep Blue for Authority */
+                        'secondary-red': '#dc2626', /* Emergency Red for Accent */
+                        'bg-gray': '#f3f4f6', /* Light background */
+                        'text-dark': '#1f2937',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+                    }
+                }
+            }
+        }
+        /* Ensuring smooth scrolling for anchors */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Style for the fixed notification bar */
+        #notification-bar {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            padding: 1rem;
+            width: fit-content;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* Custom style for detailed lists in the About section */
+        .academic-list {
+            list-style: disc;
+            margin-left: 1.5rem;
+        }
+    </style>
+</head>
+<body class="text-text-dark bg-white">
+
+    <!-- Notification Bar for User Feedback -->
+    <div id="notification-bar" class="hidden text-center text-white font-semibold"></div>
+
+    <!-- 1. Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo/Site Name - Navigation set to show 'home' page -->
+                <a href="#" class="flex items-center space-x-2 text-2xl font-extrabold text-primary-blue" onclick="showPage('home-section')">
+                    <img src="logo.jpg" alt="Paramed Scholars Logo" class="w-10 h-10 rounded-full object-cover"/>
+                    <span>Paramed Scholars</span>
+                </a>
+
+                <!-- Navigation Links (Hidden on small screens) -->
+                <nav class="hidden md:flex space-x-8 text-lg font-semibold">
+                    <!-- NAVIGATION UPDATED FOR SPA -->
+                    <a href="#about" class="text-gray-600 hover:text-primary-blue transition" onclick="showPage('about-section')">About Us</a>
+                    <a href="#notes" class="text-gray-600 hover:text-primary-blue transition" onclick="showPage('notes-section')">Study Notes</a>
+                    <a href="#question-banks" class="text-gray-600 hover:text-primary-blue transition" onclick="showPage('question-banks-section')">Question Banks</a>
+                    <a href="https://www.youtube.com/channel/UC4AsKn685GsLE7oT6Ga-7kg" target="_blank" rel="noopener noreferrer" class="text-white bg-secondary-red px-4 py-2 rounded-full hover:bg-red-700 transition shadow-lg">Community</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-[70vh]">
+
+        <!-- 2. Hero Section - HOME PAGE (Initially Visible) -->
+        <section id="home-section" class="page-content bg-primary-blue pt-20 pb-24 relative overflow-hidden">
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 text-white py-10">
+                <div class="lg:w-3/4 mx-auto">
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight">
+                        Life Sciences Mastery: <span class="text-secondary-red">Simplified & Focused.</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl font-light mb-8 opacity-90">
+                        Your central hub for CSIR NET JRF, ICMR JRF, and comprehensive paramedical science notes and video lectures.
+                    </p>
+                    
+                    <p class="mt-8 text-lg font-semibold opacity-90 text-yellow-300">
+                        Join thousands of scholars preparing for competitive exams and academic excellence.
+                    </p>
+                </div>
+                
+                <!-- NEW COLORFUL IMAGE COLLAGE (Fills the space creatively) -->
+                <div class="mt-16 flex flex-wrap justify-center items-center gap-6 p-4">
+                    <img src="1.png" alt="Lab and Microscopy" class="rounded-xl shadow-2xl transform hover:scale-105 transition duration-300 border-4 border-white/50 w-full sm:w-auto"/>
+                    <img src="2.png" alt="Exam Notes" class="rounded-xl shadow-2xl transform hover:scale-105 transition duration-300 border-4 border-white/50 w-full sm:w-auto"/>
+                    <img src="3.png" alt="Question Papers" class="rounded-xl shadow-2xl transform hover:scale-105 transition duration-300 border-4 border-white/50 w-full sm:w-auto"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. About Us Section (New Page View - Initially Hidden) -->
+        <section id="about-section" class="page-content py-20 bg-white hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- HEADING UPDATED -->
+                <h2 class="text-4xl font-bold text-center mb-12 text-primary-blue">
+                    About Us - Our Gateway to Excellence in Allied Healthcare
+                </h2>
+                
+                <div class="lg:px-16">
+                    <p class="text-lg mb-6 text-gray-700">
+                        Welcome to Paramed Scholars, a comprehensive educational
+                        platform born from our popular YouTube channel and dedicated to the success of
+                        future healthcare professionals. We bridge the gap between classroom theory and
+                        clinical practice, providing students with the high-quality resources they need
+                        to thrive in the competitive world of paramedicine and allied sciences.
+                    </p>
+                    
+                    <h3 class="text-3xl font-bold text-secondary-red mt-8 mb-4 flex items-center">
+                        <span class="mr-2">📚</span> Comprehensive Study Notes
+                    </h3>
+                    <p class="text-gray-700 mb-4">
+                        We understand that medical textbooks can be dense and overwhelming. To assist you in mastering your subjects, we offer expertly
+                        curated study notes across various disciplines, including:
+                    </p>
+                    <div class="bg-bg-gray p-6 rounded-xl shadow-inner">
+                        <!-- LIST 1: Single column enforced by removing md:grid-cols-2 -->
+                        <ul class="academic-list grid grid-cols-1 gap-y-2 text-gray-700">
+                            <li>Human Anatomy: Detailed study of the structure of the human body, its organs, and skeletal systems.</li>
+                            <li>Human Physiology: Explaining the mechanical, physical, and biochemical functions of living organisms and their systems.</li>
+                            <li>Biochemistry: Focuses on chemical processes at the molecular level within and relating to living organisms.</li>
+                            <li>Microbiology: The study of microscopic organisms such as bacteria, viruses, archaea, fungi, and protozoa.</li>
+                            <li>Pathology: Understanding the causes and effects of diseases and the study of laboratory-based diagnostics.</li>
+                            <li>Hematology: The study of blood-related disorders, blood cells, and the physiology of the circulatory system.</li>
+                            <li>General Medicine: Foundation of clinical medicine covering various diseases, diagnosis, and non-surgical treatments.</li>
+                            <li>Immunology: The study of the immune system’s defense mechanisms and related disorders like allergies and autoimmunity.</li>
+                            <li>Genetics & Molecular Biology: Understanding heredity, DNA replication, gene expression, and advanced molecular techniques.</li>
+                            <li>Histopathology: Microscopic examination of tissues to study the manifestations of disease.</li>
+                            <li>Cell Biology: Exploring the structure, function, and life cycle of the cell as the basic unit of life.</li>
+                            <li>Community Medicine & Public Health: Focuses on the health of populations, disease prevention, and healthcare administration.</li>
+                            <li>System Physiology – Animals</li>
+                            <li>System Physiology – Plants </li>
+                            <li>Evolution & Ecology: The study of how organisms adapt to their environment and the history of life on Earth.</li>
+                            <li>Developmental Biology: Investigating the processes by which animals and plants grow and develop from embryos.</li>
+                            <li>Chemistry: Atomic structure & Periodicity, Structure & Bonding, s,p&d block elements, Chemical Equilibrium, Electrochemistry, Reaction Kinetics, Thermodynamics, Organic Chemistry, Structure Reactivity Correlations and Chemistry of Biomolecules.</li>
+                            <li>Bioinformatics: Introductory Mathematics, statistics and other tools used in bioinformatics.</li>
+                            <li>Methods in Biology: Biotechniques, Histochemical & Immunotechniques, Electrophysical methods, Statistical methods, IPR, Biosafety & Bioethics.</li>
+                            <li>Applied Biochemistry</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-700 mt-6 mb-8">
+                        Our notes are designed for quick revision and deep understanding,
+                        ensuring you are always prepared for your semester and entrance exams.
+                    </p>
+
+                    <h3 class="text-3xl font-bold text-secondary-red mt-8 mb-4 flex items-center">
+                        <span class="mr-2">🎯</span> Entrance Exam Mastery
+                    </h3>
+                    <p class="text-gray-700 mb-4">
+                        Securing a seat in top medical and paramedical institutions
+                        requires a strategic approach. Paramed Scholars is your dedicated partner in
+                        cracking national and state-level entrance exams such as:
+                    </p>
+                    <div class="bg-bg-gray p-6 rounded-xl shadow-inner">
+                        <!-- LIST 2: Single column enforced by removing md:grid-cols-2 -->
+                        <ul class="academic-list grid grid-cols-1 gap-y-2 text-gray-700">
+                            <li>CSIR NET Life Sciences</li>
+                            <li>ICMR JRF (Biomedical Sciences)</li>
+                            <li>DBT-BET (JRF): Specialised biotechnology-focused research fellowship.</li>
+                            <li>GATE Life Sciences (XL): For admission into M.Tech/PhD programs at IITs and IISc.</li>
+                            <li>TIFR/NCBS (GS): Biology entrance for premier research institutes.</li>
+                            <li>CUET-PG: For Master's entrance into Central Universities.</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-700 mt-6 mb-8">
+                        We offer previous year question papers (PYQs), mock tests, and
+                        exam-pattern insights to help you build the confidence and speed necessary to ace your tests.
+                    </p>
+                    
+                    <h3 class="text-3xl font-bold text-secondary-red mt-8 mb-4 flex items-center">
+                        <span class="mr-2">📽️</span> Why Join Us?
+                    </h3>
+                    <p class="text-lg mb-6 text-gray-700">
+                        By combining our YouTube video tutorials with the structured
+                        notes and exam resources on this website, we provide a 360-degree learning
+                        experience. Whether you are a fresh aspirant or a final-year student, Paramed
+                        Scholars is here to ensure your journey from student to skilled professional is
+                        smooth and successful.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 4: STUDY NOTES (New Page View - Initially Hidden) -->
+        <section id="notes-section" class="page-content py-20 bg-bg-gray hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-12 text-primary-blue">
+                    Study Notes: Comprehensive Revision Material
+                </h2>
+                <div id="notes-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Notes loaded from Firestore will be inserted here -->
+                    <div class="col-span-full text-center p-8 text-lg text-gray-500 bg-white rounded-xl">
+                        Loading study notes...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: QUESTION BANKS (New Page View - Initially Hidden) -->
+        <section id="question-banks-section" class="page-content py-20 bg-white hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-12 text-secondary-red">
+                    Question Banks: Exam Practice & PYQs
+                </h2>
+                <div id="question-banks-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Question Banks loaded from Firestore will be inserted here -->
+                    <div class="col-span-full text-center p-8 text-lg text-gray-500 bg-bg-gray rounded-xl">
+                        Loading question banks...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 6. Content Access/Call to Action (Community section - Currently Visible on all views) -->
+        <section id="content" class="py-20 bg-primary-blue text-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold mb-6">
+                    Join the Paramed Scholars Community
+                </h2>
+                <p class="text-xl font-light mb-8 opacity-90">
+                    Watch our latest video content and connect with fellow scholars.
+                </p>
+
+                <!-- CTA Placeholder -->
+                <div class="bg-white text-text-dark p-8 rounded-xl shadow-3xl transform transition duration-500 hover:scale-[1.02]">
+                    <h3 class="text-3xl font-bold text-secondary-red mb-2">Watch Latest Lectures</h3>
+                    <p class="text-lg text-gray-700 mb-6">All video lectures on the YouTube channel are free and constantly updated.</p>
+                    
+                    <!-- UPDATED YOUTUBE LINK AND COLOR -->
+                    <a href="https://www.youtube.com/channel/UC4AsKn685GsLE7oT6Ga-7kg" target="_blank" rel="noopener noreferrer" class="block bg-gray-900 text-white text-2xl font-bold px-10 py-4 rounded-lg shadow-xl hover:bg-gray-700 transition duration-300">
+                        Go to YouTube Channel
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- 7. Hidden Admin Panel for Uploading Notes -->
+        <section id="admin-panel" class="py-12 bg-gray-900 text-white hidden">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold mb-6 text-yellow-400 border-b border-gray-700 pb-3">
+                    Instructor Content Upload Panel (Admin Only)
+                </h2>
+                <p class="mb-4 text-sm text-gray-400">
+                    Use this panel to save metadata about your notes/question banks to the public database. Remember to host the actual PDF/file externally (e.g., Google Drive) and paste the shareable URL below.
+                </p>
+
+                <form id="note-upload-form" class="space-y-4 bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <!-- NEW CONTENT TYPE SELECTOR -->
+                    <div>
+                        <label for="content-type" class="block text-sm font-medium text-gray-300">Content Type</label>
+                        <select id="content-type" required class="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white p-3 shadow-sm focus:border-primary-blue focus:ring-primary-blue">
+                            <option value="">-- Select Content Type --</option>
+                            <option value="notes">Study Note</option>
+                            <option value="question_banks">Question Bank / PYQ</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="note-topic" class="block text-sm font-medium text-gray-300">Topic Title (e.g., Cytopathology: Cell Stains)</label>
+                        <input type="text" id="note-topic" required class="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white p-3 shadow-sm focus:border-primary-blue focus:ring-primary-blue">
+                    </div>
+                    <div>
+                        <label for="note-description" class="block text-sm font-medium text-gray-300">Short Description</label>
+                        <textarea id="note-description" required rows="2" class="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white p-3 shadow-sm focus:border-primary-blue focus:ring-primary-blue"></textarea>
+                    </div>
+                    <div>
+                        <label for="note-url" class="block text-sm font-medium text-gray-300">Downloadable File URL (PDF/DOCX Link)</label>
+                        <input type="url" id="note-url" required class="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white p-3 shadow-sm focus:border-primary-blue focus:ring-primary-blue">
+                    </div>
+                    
+                    <button type="submit" id="upload-button"
+                        class="w-full py-3 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-gray-900 bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-150">
+                        Upload Content Metadata
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 8. Footer -->
+    <footer id="footer" class="bg-text-dark text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-gray-700 pb-8 mb-8">
+                
+                <!-- Column 1: Logo & Mission -->
+                <div>
+                    <h4 class="text-xl font-extrabold text-white mb-4">Paramed Scholars</h4>
+                    <p class="text-sm">Empowering the next generation of life scientists and paramedical professionals through clear, accessible content.</p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-secondary-red transition" onclick="showPage('about-section')">About Us</a></li>
+                        <li><a href="#notes-section" class="hover:text-secondary-red transition" onclick="showPage('notes-section')">Study Notes</a></li>
+                        <li><a href="#question-banks-section" class="hover:text-secondary-red transition" onclick="showPage('question-banks-section')">Question Banks</a></li>
+                        <!-- UPDATED YOUTUBE LINK -->
+                        <li><a href="https://www.youtube.com/channel/UC4AsKn685GsLE7oT6Ga-7kg" target="_blank" class="hover:text-secondary-red transition">Visit YouTube</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Support -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-secondary-red transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-secondary-red transition">Syllabus Guide</a></li>
+                        <li><a href="#" class="hover:text-secondary-red transition">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Content Focus -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Key Content</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>CSIR-NET JRF Coaching</li>
+                        <li>Histopathology Lectures</li>
+                        <li>Clinical Biochemistry Tutorials</li>
+                        <li>ICMR & Ph.D. Entrance</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright and Admin Status -->
+            <div class="text-center text-sm text-gray-500">
+                &copy; 2025 Paramed Scholars. All rights reserved. 
+                <p id="auth-status" class="mt-2 text-xs text-gray-600">Auth Status: Connecting...</p>
+                <p class="mt-1 text-xs text-gray-600">
+                    <span class="text-yellow-500 font-bold">ADMIN:</span> Log in to Firebase, copy your User ID, and paste it into the JS variable <code class="bg-gray-700 p-0.5 rounded">ADMIN_USER_ID</code> to unlock the upload panel.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK Imports and Logic -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { 
+            getAuth, 
+            signInAnonymously, 
+            signInWithCustomToken, 
+            onAuthStateChanged 
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { 
+            getFirestore, 
+            collection, 
+            addDoc, 
+            onSnapshot, 
+            query, 
+            where,
+            serverTimestamp 
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+
+        // --- PAGE MANAGEMENT LOGIC ---
+        const pageIds = ['home-section', 'about-section', 'notes-section', 'question-banks-section'];
+        const defaultPage = 'home-section';
+
+        /**
+         * Toggles the visibility of pages (sections) based on the provided page ID.
+         * @param {string} pageId - The ID of the page section to show.
+         */
+        window.showPage = function(pageId) {
+            pageIds.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    if (id === pageId) {
+                        element.classList.remove('hidden');
+                    } else {
+                        element.classList.add('hidden');
+                    }
+                }
+            });
+            // Update URL hash for simple routing (optional)
+            window.location.hash = pageId.replace('-section', '');
+        }
+
+        // Initialize display state
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#', '');
+            let initialPage = defaultPage;
+            if (hash && pageIds.includes(hash + '-section')) {
+                initialPage = hash + '-section';
+            }
+            showPage(initialPage);
+        });
+        // ------------------------------
+        
+        // 1. GLOBAL VARIABLES & INITIALIZATION
+        let db, auth;
+        let isAuthReady = false;
+        let currentUserId = null;
+        let isAdmin = false;
+
+        // --- ADMIN CONFIGURATION ---
+        // !!! IMPORTANT: REPLACE THIS WITH YOUR ACTUAL FIREBASE USER ID (UID) !!!
+        const ADMIN_USER_ID = "REPLACE_WITH_YOUR_ACTUAL_USER_ID"; 
+        // ---------------------------
+
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        const authStatusElement = document.getElementById('auth-status');
+        const notesContainer = document.getElementById('notes-container');
+        const questionBanksContainer = document.getElementById('question-banks-container');
+        const notificationBar = document.getElementById('notification-bar');
+        const adminPanel = document.getElementById('admin-panel');
+
+        function showNotification(message, type = 'success') {
+            notificationBar.textContent = message;
+            notificationBar.className = ''; // Reset classes
+            notificationBar.classList.add('block', type === 'error' ? 'bg-red-600' : 'bg-green-600');
+            setTimeout(() => {
+                notificationBar.classList.add('hidden');
+            }, 3000);
+        }
+
+        async function initializeFirebase() {
+            try {
+                if (!firebaseConfig || Object.keys(firebaseConfig).length === 0) {
+                    throw new Error("Firebase configuration is missing.");
+                }
+
+                const app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+
+                // 2. AUTHENTICATION
+                onAuthStateChanged(auth, async (user) => {
+                    if (user) {
+                        currentUserId = user.uid;
+                        isAuthReady = true;
+
+                        // Authorization Check
+                        if (currentUserId === ADMIN_USER_ID && ADMIN_USER_ID !== "REPLACE_WITH_YOUR_ACTUAL_USER_ID") {
+                            isAdmin = true;
+                            authStatusElement.textContent = `Auth Status: Logged in (ADMIN - UID: ${currentUserId.substring(0, 8)}...)`;
+                            adminPanel.classList.remove('hidden'); // Show admin panel for admin
+                        } else {
+                            isAdmin = false;
+                            authStatusElement.textContent = `Auth Status: Logged in (User ID: ${currentUserId.substring(0, 8)}...)`;
+                            adminPanel.classList.add('hidden'); // Ensure panel is hidden for non-admins/placeholders
+                        }
+
+                        // Start fetching data only after successful login
+                        setupContentListeners(); 
+                    } else {
+                        // Attempt silent sign-in if no user is found
+                        if (initialAuthToken) {
+                            await signInWithCustomToken(auth, initialAuthToken);
+                        } else {
+                            // Fallback to anonymous sign-in
+                            await signInAnonymously(auth);
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error("Firebase Initialization Error:", error);
+                authStatusElement.textContent = `Auth Status: Error (${error.message})`;
+                showNotification(`Initialization failed: ${error.message}`, 'error');
+            }
+        }
+
+        // 3. FIRESTORE LOGIC - CONTENT UPLOAD
+        const contentCollectionPath = `artifacts/${appId}/public/data/content`; // Changed collection name to 'content'
+
+        document.getElementById('note-upload-form').addEventListener('submit', handleContentUpload);
+
+        async function handleContentUpload(e) {
+            e.preventDefault();
+            
+            if (!isAuthReady || !db) {
+                showNotification("Database not ready. Please wait.", 'error');
+                return;
+            }
+            
+            const uploadButton = document.getElementById('upload-button');
+            if (!isAdmin) {
+                showNotification("Error: You are not authorized to upload content.", 'error');
+                uploadButton.disabled = false;
+                uploadButton.textContent = 'Upload Content Metadata';
+                return;
+            }
+
+            const contentType = document.getElementById('content-type').value.trim();
+            const topic = document.getElementById('note-topic').value.trim();
+            const description = document.getElementById('note-description').value.trim();
+            const url = document.getElementById('note-url').value.trim();
+            
+            if (!contentType || !topic || !url) {
+                showNotification("Content Type, Topic, and URL are required.", 'error');
+                return;
+            }
+
+            uploadButton.disabled = true;
+            uploadButton.textContent = 'Uploading...';
+
+            try {
+                await addDoc(collection(db, contentCollectionPath), {
+                    type: contentType, // 'notes' or 'question_banks'
+                    topic: topic,
+                    description: description,
+                    url: url,
+                    userId: currentUserId,
+                    createdAt: serverTimestamp()
+                });
+
+                showNotification('Content metadata uploaded successfully!');
+                document.getElementById('note-upload-form').reset(); // Clear form
+            } catch (error) {
+                console.error("Error uploading content:", error);
+                showNotification(`Upload failed: ${error.message}`, 'error');
+            } finally {
+                uploadButton.disabled = false;
+                uploadButton.textContent = 'Upload Content Metadata';
+            }
+        }
+        
+        // 4. FIRESTORE LOGIC - CONTENT DISPLAY (Real-time Listeners)
+        function setupContentListeners() {
+            if (!db || !isAuthReady) return;
+
+            // Listener for Study Notes
+            const notesQuery = query(collection(db, contentCollectionPath), where("type", "==", "notes"));
+            onSnapshot(notesQuery, (snapshot) => {
+                const notes = [];
+                snapshot.forEach((doc) => {
+                    notes.push({ id: doc.id, ...doc.data() });
+                });
+                renderContent(notes, 'notes');
+            }, (error) => {
+                console.error("Error listening to notes:", error);
+                renderContent([], 'notes', error.message);
+            });
+
+            // Listener for Question Banks
+            const qbQuery = query(collection(db, contentCollectionPath), where("type", "==", "question_banks"));
+            onSnapshot(qbQuery, (snapshot) => {
+                // FIX: Initialize and populate questionBanks correctly inside the callback scope
+                const questionBanks = [];
+                snapshot.forEach((doc) => {
+                    questionBanks.push({ id: doc.id, ...doc.data() });
+                });
+                renderContent(questionBanks, 'question_banks');
+            }, (error) => {
+                console.error("Error listening to question banks:", error);
+                renderContent([], 'question_banks', error.message);
+            });
+        }
+
+        /**
+         * Renders the list of content fetched from Firestore to the correct container.
+         * @param {Array<Object>} items - Array of content objects.
+         * @param {string} type - 'notes' or 'question_banks'.
+         * @param {string} error - Optional error message.
+         */
+        function renderContent(items, type, error = null) {
+            const container = type === 'notes' ? notesContainer : questionBanksContainer;
+            container.innerHTML = ''; // Clear previous content
+
+            if (error) {
+                 container.innerHTML = `<div class="col-span-full text-center p-8 text-lg text-red-500 bg-red-100 rounded-xl">Error fetching ${type}: ${error}</div>`;
+                 return;
+            }
+
+            if (items.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center p-8 text-lg text-gray-500 ${type === 'notes' ? 'bg-white' : 'bg-bg-gray'} rounded-xl">
+                    No ${type === 'notes' ? 'Study Notes' : 'Question Banks'} uploaded yet. Check back soon!
+                </div>`;
+                return;
+            }
+
+            // Sort by newest first 
+            items.sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0));
+
+            const isNote = type === 'notes';
+
+            items.forEach(item => {
+                const noteCard = `
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 ${isNote ? 'border-primary-blue' : 'border-secondary-red'} hover:shadow-2xl transition duration-300">
+                        <h4 class="text-xl font-bold ${isNote ? 'text-primary-blue' : 'text-secondary-red'} mb-2">${item.topic}</h4>
+                        <p class="text-gray-600 mb-4">${item.description || 'No description provided.'}</p>
+                        <a href="${item.url}" target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center text-sm font-semibold text-white bg-secondary-red px-4 py-2 rounded-full hover:bg-red-700 transition">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            Download ${isNote ? 'Note' : 'Question Bank'} (External Link)
+                        </a>
+                    </div>
+                `;
+                container.innerHTML += noteCard;
+            });
+        }
+
+        // Initialize Firebase on load
+        initializeFirebase();
+
+    </script>
+
+</body>
+</html>
